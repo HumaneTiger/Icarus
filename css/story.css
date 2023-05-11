@@ -1,0 +1,131 @@
+div.story-strip {
+    z-index: 25;
+}
+
+div.story {
+    position: fixed;
+    left: 0;
+    font-size: 24px;
+    transition: transform 12s linear;
+	transform: translateX(105vw);
+}
+
+div.story.go {
+    transform: translateX(-52vw);
+}
+
+.golden {
+  background: -webkit-linear-gradient(transparent, transparent),
+             -webkit-linear-gradient(top, #ae934a 0%, #ae934a 26%, #eec965 35%, rgba(163,126,67,1) 65%, #6c5b2e 81%, #6c5b2e 100%);
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-family: 'Newsreader', serif;
+    position: relative;
+	text-transform: uppercase;
+	font-size: 2.8vh;
+	margin: 0;
+	font-weight: 600;
+    margin-bottom: 1.7vh;
+    letter-spacing: 1px;
+    cursor: default;
+}
+
+.golden:after {
+    background: none;
+    content: attr(data-heading);
+    left: 0;
+	top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow: 
+		-1px 0 1px rgba(0, 0, 0, 0.9), 
+		0 1px 1px rgba(0, 0, 0, 0.9), 
+		5px 5px 16px rgba(255, 255, 255, 0.4),
+		-5px -5px 16px rgba(255, 255, 255, 0.4);
+}
+
+#scene-name .golden:after {
+    text-shadow: 
+		-1px 0 1px rgba(0, 0, 0, 0.9), 
+		0 1px 1px rgba(0, 0, 0, 0.9), 
+		5px 5px 16px rgba(0, 0, 0, 0.4),
+		-5px -5px 16px rgba(0, 0, 0, 0.4);
+}
+
+#scene-name {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100vw;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    background-color: rgba(12, 34, 41, 0.6);
+    z-index: 31;
+}
+
+#scene-name.hidden {
+    display: none;
+}
+
+#scene-name.show {
+    opacity: 1;
+}
+
+#scene-name .border-top {
+}
+
+#scene-name .name {
+    height: 16vh;
+    text-align: center;
+}
+
+#scene-name .inner {
+  position: relative;
+  display: inline-block;
+  margin: 5vh auto 0;
+  padding: 0;
+}
+
+#scene-name .inner p {
+    font-size: 8vh;
+    padding: 0;
+    margin: 0;
+}
+
+#scene-name .border-top {
+  vertical-align: top;
+  margin: -3px 0 0 -5%;
+}
+
+#scene-name .border-bottom {
+  vertical-align: bottom;
+  margin: 0 0 -3px -5%;
+}
+
+.rain-container.hidden {
+    display: none;
+}
+
+.rain-drop {
+    position: fixed;
+    width: 0.3vh;
+    height: 1.1vh;
+    background-image: linear-gradient(transparent, #113);
+    top: 0;
+    animation: drop 2.5s infinite;
+}
+
+@keyframes drop {
+    from {
+        transform: translate(0, 0) rotate(25deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-30vw, 100vh) rotate(25deg);
+        opacity: 0.3;
+    }
+}
+

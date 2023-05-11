@@ -1,0 +1,29 @@
+main .tower,
+.sun-strip-1 .sun,
+.sun-strip-2 .sun,
+.sun-strip-1 .cloud,
+.sun-strip-2 .cloud,
+.wave-strip .wave img,
+.desert-strip .desert,
+.curl-wave-strip .curl-wave {
+	transition: transform 10s linear;
+	transform: translate(0, 0);
+}
+
+body.flying .sun-strip-2 .sun.go,
+body.flying .sun-strip-2 .cloud.go,
+body.flying .curl-wave-strip .curl-wave.go {
+	transform: translate(-120vw, 0);
+}
+
+body.flying main .tower.go,
+body.flying .sun-strip-1 .sun.go,
+body.flying .sun-strip-1 .cloud.go,
+body.flying .desert-strip .desert.go,
+body.flying .wave-strip .wave.go img {
+	transform: translate(-140vw, 0);
+}
+
+body.flying .desert-strip .desert.go {
+	transform: translate(-170vw, 0);
+}

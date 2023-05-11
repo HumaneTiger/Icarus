@@ -1,0 +1,278 @@
+main .indicators div {
+    border: 1px green dashed;
+    position: fixed;
+    background: rgba(0, 0, 255, 0.25);
+    z-index: 30;
+}
+
+#hero-indicator {
+    background: rgba(0, 255, 0, 0.25);
+}
+
+.tower {
+    position: absolute;
+    left: -6vw;
+    top: 10vh;
+    z-index: 28;
+    height: 95vh;
+    transition: transform 12s linear;
+}
+
+.tower img {
+    height: 100%;
+    width: auto;
+}
+
+.tower.hidden {
+    display: none;
+}
+
+.tower.go {
+    transform: translateX(-150vw);
+}
+
+.goal {
+    position: absolute;
+    bottom: 5vh;
+    left: 105vw;
+    z-index: 28;
+    height: 65vh;
+    transition: transform 20s linear;
+}
+
+.goal img {
+    height: 100%;
+    width: auto;
+}
+
+.goal.hidden {
+    display: none;
+}
+
+.goal.go {
+    transform: translateX(-180vw);
+}
+
+.shippy {
+	position: fixed;
+	bottom: 1vh;
+	left: 105vw;
+    height: 50vh;
+	z-index: 27;
+    animation: shippy 4s infinite;
+    transition: left 12s linear;
+}
+
+.shippy img {
+    height: 100%;
+    width: auto;
+}
+
+div.shippy.hidden {
+    display: none;
+}
+
+div.shippy.go {
+    left: -50vw;
+}
+
+@keyframes shippy {
+    25%{
+        transform: rotate(15deg) translateY(-4vh);
+    }
+    50%{
+        transform: rotate(-2deg) translateY(-1vh);
+    }
+    75%{
+        transform: rotate(12deg) translateY(-3vh);
+    }
+    100%{
+        transform: rotate(0deg) translateY(0);
+    }
+}
+
+.cliff {
+	position: fixed;
+	bottom: 0;
+	left: 105vw;
+	z-index: 27;
+    transition: transform 12s linear;
+}
+
+div.cliff.hidden {
+    display: none;
+}
+
+.cliff.go {
+    transform: translateX(-150vw);
+}
+
+.cliff img {
+    height: 100%;
+    width: auto;
+}
+
+.cliff-1 {
+    height: 65vh;
+}
+
+.cliff-2 {
+    height: 50vh;
+}
+
+.cliff-3 {
+    height: 70vh;
+}
+
+.cliff-4 {
+    height: 50vh;
+}
+
+.tentacle {
+	position: fixed;
+	bottom: -40vh;
+    transform: translateY(30vh) rotate(5deg) scale(1.1);
+    transition: transform 3s linear;
+}
+
+.tentacle img {
+    height: 100%;
+    width: auto;
+    transform-origin: 50% 95%;
+    animation: tentacle 2s infinite;
+}
+
+@keyframes tentacle {
+    0%{
+        transform: rotate(0) translateY(0) scale(0.9);
+    }
+    25%{
+        transform: rotate(4deg) translateY(2vh) scale(0.8, 1);
+    }
+    50%{
+        transform: rotate(2deg) translateY(1vh) scale(0.9, 0.8);
+    }
+    75%{
+        transform: rotate(-3deg) translateY(3vh) scale(0.85, 1);
+    }
+    100%{
+        transform: rotate(0) translateY(0) scale(0.9);
+    }
+}
+
+.tentacle.go {
+    transform: translateY(0vh) rotate(5deg) scale(1.1);
+}
+
+.tentacle.attack {
+    transform: translateY(-45vh) rotate(5deg) scale(1.1);
+}
+
+.tentacle.retreat {
+    transform: translate(-55vw, -20vh) rotate(50deg);
+}
+
+div.tentacle.hidden {
+    display: none;
+}
+
+.tentacle-1 {
+    left: 16vw;
+    height: 67vh;
+	z-index: 28;
+}
+.tentacle-2 {
+    left: 19vw;
+    height: 57vh;
+	z-index: 27;
+}
+.tentacle-3 {
+    left: 25vw;
+    height: 65vh;
+	z-index: 25;
+}
+.tentacle-4 {
+    left: 29vw;
+    height: 68vh;
+	z-index: 28;
+}
+.tentacle-5 {
+    left: 24vw;
+    height: 58vh;
+	z-index: 28;
+}
+
+.gull {
+	position: fixed;
+	left: 105vw;
+	z-index: 26;
+    top: 0;
+    animation: gull-outer 2s infinite;
+    transition: left 12s linear, top 1s ease-out;
+}
+
+.gull img {
+    animation: gull-inner 2s infinite;
+    height: 100%;
+    width: auto;
+}
+
+@keyframes gull-outer {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes gull-inner {
+    0% {
+        transform: rotate(0);
+    }
+    33% {
+        transform: rotate(-8deg);
+    }
+    66% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+div.gull.hidden {
+    display: none;
+}
+
+.gull-1.go {
+    top: 20vh;
+    left: -50vw;
+}
+
+.gull-2.go {
+    top: 35vh;
+    left: -50vw;
+}
+
+.gull-3.go {
+    top: 36vh;
+    left: -50vw;
+}
+
+.gull-1 {
+    height: 15vh;
+}
+
+.gull-2 {
+	transform: translateX(7vw);
+    height: 10vh;
+}
+
+.gull-3 {
+	transform: translateX(7vw);
+    height: 10vh;
+}

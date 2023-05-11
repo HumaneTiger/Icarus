@@ -1,0 +1,243 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Icarus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/flying.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="stylesheet" href="css/objects.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="gradient"></div>
+    <!--<div class="cont"><h1 class="golden" data-heading="ICARUS">ICARUS</h1></div>--> 
+    <img class="border" src="img/golden-border.png" width="110%" height="15">
+  </header>
+
+    <div id="scene-name" class="hidden">
+        <img class="border-top" src="img/golden-border.png" width="110%" height="5">
+        <div class="name">
+          <div class="inner"></div>
+        </div>
+        <img class="border-bottom" src="img/golden-border.png" width="110%" height="5">
+    </div>
+
+  <main>
+    <div id="alarm-indicator"></div>
+    <div class="story-strip"></div>
+    <div class="story hidden"></div>
+    <div id="hero" class="hidden">
+      <img class="wing" src="img/icarus-wings.png">
+      <img class="body" src="img/icarus-body.png">
+    </div>
+    <div class="tower hidden"><img src="img/tower.png"></div>
+    <div class="goal hidden"><img src="img/goal.png"></div>
+    <div class="meters hidden">
+      <div class="heat"><div class="zero"><img src="img/meter-heat-zero.png" width="100%" height="auto"></div></div>
+      <div class="excitement"><div class="zero"><img src="img/meter-excitement-zero.png" width="100%" height="auto"></div></div>
+      <div class="wetness"><div class="zero"><img src="img/meter-wetness-zero.png" width="100%" height="auto"></div></div>
+    </div>
+    <div class="wind hidden">
+      <div class="direction"></div>
+    </div>
+    <div class="sun-strip-1"></div>
+    <div class="sun-strip-2"></div>
+    <div class="thunder-1"></div>
+    <div class="thunder-2"></div>
+
+    <div class="object-strip"></div>
+
+    <div class="wave-strip"></div>
+    <div class="curl-wave-strip"></div>
+    <div class="desert-strip"></div>
+
+    <div class="sun sun-1 hidden"><img src="img/sun-1.png"></div>
+    <div class="sun sun-2 hidden"><img src="img/sun-2.png"></div>
+    <div class="sun sun-3 hidden"><img src="img/sun-3.png"></div>
+    <div class="sun sun-4 hidden"><img src="img/sun-4.png"></div>
+    <div class="sun sun-5 hidden"><img src="img/sun-5.png"></div>
+
+    <div class="wave wave-1 hidden"><img src="img/wave-1.png"></div>
+    <div class="wave wave-2 hidden"><img src="img/wave-3.png"></div>
+    <div class="wave wave-3 hidden"><img src="img/wave-2.png"></div>
+    <div class="curl-wave curl-wave-1 hidden"><img src="img/curl-wave-1.png"></div>
+    <div class="curl-wave curl-wave-2 hidden"><img src="img/curl-wave-2.png"></div>
+
+    <div class="desert desert-1 hidden"><img src="img/desert-1.png"></div>
+    <div class="desert desert-1 hidden"><img src="img/desert-2.png"></div>
+    <div class="desert desert-2 hidden"><img src="img/desert-3.png"></div>
+    <div class="desert desert-3 hidden"><img src="img/desert-4.png"></div>
+
+    <div class="cloud cloud-1 hidden"><img src="img/cloud-1.png"></div>
+    <div class="cloud cloud-2 hidden"><img src="img/cloud-2.png"></div>
+    <div class="cloud cloud-3 hidden"><img src="img/cloud-3.png"></div>
+    <div class="cloud cloud-4 hidden"><img src="img/cloud-2.png"></div>
+    <div class="cloud cloud-5 hidden"><img src="img/cloud-1.png"></div>
+
+    <div class="shippy hidden"><img src="img/shippy.png"></div>
+    <div class="cliff cliff-1 hidden"><img src="img/cliff-1.png"></div>
+    <div class="cliff cliff-2 hidden"><img src="img/cliff-2.png"></div>
+    <div class="cliff cliff-3 hidden"><img src="img/cliff-3.png"></div>
+    <div class="cliff cliff-4 hidden"><img src="img/cliff-4.png"></div>
+    <div class="tentacle tentacle-1 hidden"><img src="img/tentacle-4.png"></div>
+    <div class="tentacle tentacle-2 hidden"><img src="img/tentacle-2.png"></div>
+    <div class="tentacle tentacle-3 hidden"><img src="img/tentacle-1.png"></div>
+    <div class="tentacle tentacle-4 hidden"><img src="img/tentacle-3.png"></div>
+    <div class="tentacle tentacle-5 hidden"><img src="img/tentacle-3.png"></div>
+    <div class="gull gull-1 hidden"><img src="img/gull-1.png"></div>
+    <div class="gull gull-2 hidden"><img src="img/gull-2.png"></div>
+    <div class="gull gull-3 hidden"><img src="img/gull-3.png"></div>
+    <div class="rain-container"></div>
+    <div class="rain-drop"></div>
+    <div class="indicators">
+        <div id="hero-indicator"></div>
+        <div class="indi-0"></div>
+        <div class="indi-1"></div>
+        <div class="indi-2"></div>
+        <div class="indi-3"></div>
+        <div class="indi-4"></div>
+    </div>
+    <div id="all-audio">
+      <!-- LOOP -->
+      <audio class="waves" src="media/waves.mp3" preload loop></audio>
+      <audio class="desert" src="media/desert.mp3" preload loop></audio>
+      <audio class="rain-thunder" src="media/rain-and-thunders.mp3" preload loop></audio>
+      <audio class="enigmatic" src="media/enigmatic.mp3" preload loop></audio>
+      <audio class="instinct" src="media/instinct.mp3" preload loop></audio>
+      <!-- NOLOOP -->
+      <audio class="seagull" src="media/seagull.mp3" preload></audio>
+      <audio class="flap" src="media/flap-2.wav" preload></audio>
+      <audio class="hit" src="media/small-hit-2.mp3" preload></audio>
+      <audio class="thunder" src="media/thunder.mp3" preload></audio>
+    </div>
+  </main>
+  <div class="ui-blocker start"></div>
+  <div class="scene-blocker"></div>
+  <div class="thank-you">
+    <img src="img/logo-small.png">
+    <p>
+      Thank you for playing my game.
+    </p>
+  </div>
+  <aside class="start">
+    <div class="aside-outer">
+      <div class="aside-inner">
+        <div class="cont"><h1 class="golden" data-heading="ICARUS">ICARUS</h1></div>
+        <ul>
+          <li><button type="button" name="prologue"><span data-tooltip="Recommended for new players">Prologue</span></button></li>
+          <li><button type="button" name="tutorial"><span data-tooltip="Learn the rules and how to fly">Tutorial</span></button></li>
+          <li class="play"><button type="button" name="play" class=""><span>Play</span></button></li>
+          <li class="play-modes hidden">
+            <button type="button" name="play-normal" class="narrow"><span data-tooltip="Stable wind conditions, More control">Normal</span></button>
+            <button type="button" name="play-hard" class="narrow"><span data-tooltip="Changing wind conditions">Hard</span></button>
+          </li>
+          <li><button type="button" name="credits"><span>Credits</span></button></li>
+        </ul>
+        <div class="credits">
+          <h3>Artwork, Programming, Idea & Gameplay</h3>
+          <p>
+            <a href="https://humane-tiger.itch.io/" target="blank">Humane Tiger</a>
+          </p>
+          <h3>Music</h3>
+          <p>
+              <a href="https://bensound.com" target="blank">bensound.com</a>
+              and
+              <a href="https://freesound.org" target="blank">freesound.org</a>
+          </p>
+          <h3 class="inspi">Inspiration</h3>
+          <p class="inspi">
+            <a href="https://www.totalwar.com/games/rome-ii/" target="blank">Total War - Rome II</a> ◦
+            <a href="https://www.ubisoft.com/en-gb/game/assassins-creed/odyssey" target="blank">Assassin's Creed Odyssey</a> ◦
+            <a href="https://www.slitherine.com/game/field-of-glory-ii" target="blank">Field of Glory II</a>
+          </p>
+        </div>
+      </div>
+      <div class="prologue-cont page-1 hidden">
+        <h2 class="golden" data-heading="The story of Daedalus">The story of Daedalus</h2>
+        <h2 class="golden" data-heading="and Icarus">and Icarus</h2>
+        <p>
+            Daedalus, the father of Icarus, was a great Athenian sculptor, craftsman and inventor in ancient Greece.
+            After committing a dreadful crime, he was forced to flee from Athens to Crete, where he offered his services to King Minos,
+            who was pleased to have such a skilled individual in his court.
+        </p>
+        <p>
+            Daedalus was not only responsible for building the impressive palace of Knossos,
+            but also for conceiving and building the well-known labyrinth of Minos,
+            where he imprisoned the centauroid Minotaur. 
+        </p>
+        <p class="footer">1/3</p>
+      </div>
+      <div class="prologue-cont page-2 hidden">
+        <p>
+            All these achievements did not prevent him and Icarus from being imprisoned in the highest tower of Crete,
+            accused of conspiring against the king.
+        </p>
+        <p>
+            While observing the birds that circled his prison, the means for escape became clear.
+            Daedalus asked his son to collect pieces of wood and built wooden structures that resembled bird wings.
+            Using feathers from the flocks that perched on the tower, and the wax from candles,
+            he had built two pairs of massive wings one for him and one for his son.
+        </p>
+        <p class="footer">2/3</p>
+      </div>
+      <div class="prologue-cont page-3 hidden">
+        <p>
+            He strapped his wings on and noticed that his invention worked greatly.
+            Then he helped Icarus to put on his wings and gave him a warning ...
+        </p>
+        <p>
+            And here is where our story starts.
+        </p>
+        <p>
+            You are Icarus. You are trying to fly away from your prison as only birds or gods could do.
+        </p>
+        <ul>
+            <li>
+                <button type="button" name="prolo-tutorial" class="primary narrow"><span data-tooltip="Start tutorial and learn the rules">Learn how to fly</span></button>
+                <button type="button" name="prolo-play-normal" class="primary narrow"><span data-tooltip="Launch the game">Start your escape</span></button>
+            </li>
+        </ul>
+      </div>
+      <div class="prologue-navi">
+        <a href="#" class="prev golden hidden">⮘</a>
+        <a href="#" class="next golden">⮚</a>
+      </div>
+    </div>
+  </aside>
+  <aside class="game hidden">
+    <div class="aside-outer">
+      <div class="aside-inner">
+        <ul>
+          <li><button type="button" name="continue"><span>Continue</span></button></li>
+          <li><button type="button" name="quit"><span>Quit</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <footer>
+    <div class="gradient"></div>
+    <img class="border" src="img/golden-border.png" width="110%" height="15">
+    <div id="debug" class="hidden"></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/control.js"></script>
+  <script src="js/object.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>

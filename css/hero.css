@@ -1,0 +1,99 @@
+#hero {
+	position: fixed;
+    opacity: 1;
+	top: 0;
+	left: 20vw;
+	height: 4vh;
+	transform: translateY(40vh);
+	transition: transform 3s ease-in-out, opacity 1s ease-out, top 3s ease-in 0.2s, left 3s ease-out;
+	z-index: 26;
+}
+
+#hero.hidden {
+    opacity: 0;
+}
+
+#hero .body {
+	height: 100%;
+	width: auto;
+	z-index: 1;
+    rotate(10deg);
+    animation: body 4s infinite;
+	animation-timing-function: linear;
+	transform-origin: 75% 50%;
+}
+
+#hero .wing {
+	position: absolute;
+	bottom: 10%;
+	right: 20%;
+	height: 12vh;
+	width: auto;
+	z-index: 2;
+	transition: bottom 3s ease-out, right 2.5s ease-out;
+}
+
+#hero .wing {
+    animation: wings 4s infinite;
+	animation-timing-function: linear;
+	transform-origin: 100% 85%;
+}
+
+@keyframes wings {
+    0%{
+        transform: rotate(0deg) scale(1, 1.2);
+    }
+    25% {
+        transform: rotate(30deg) scale(1, 0.33);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1, -1);
+    }
+    65% {
+        transform: rotate(-20deg) scale(1, -0.5);
+    }
+    85% {
+        transform: rotate(-10deg) scale(1, 0.33);
+    }
+    100%{
+        transform: rotate(0deg) scale(1, 1.2);
+    }
+}
+
+@keyframes body {
+    0%{
+        transform: translateY(-0.5vh) rotate(-3deg);
+    }
+    25% {
+        transform: translateY(0vh) rotate(-7deg);
+    }
+    50% {
+        transform: translateY(-1.6vh) rotate(-12deg);
+    }
+    60% {
+        transform: translateY(-1.3vh) rotate(-9deg);
+    }
+    100%{
+        transform: translateY(-0.5vh) rotate(-3deg);
+    }
+}
+
+#hero.dead {
+    left: -10vw;
+    top: 75vh;
+}
+
+#hero.dead .wing {
+}
+
+@keyframes dead {
+    0%{
+        transform: rotate(0) translateY(0vh);
+    }
+    50% {
+        transform: rotate(-55deg) translateY(35vh);
+    }
+    100%{
+        transform: rotate(20deg) translateY(70vh);
+    }
+}
